@@ -2,31 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Barrel : Obstacle
+public class BlueCar : Obstacle // INHERITANCE
 {
-    public float movementSpeed = 2f;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public float movementSpeed = 1f;
 
     // Update is called once per frame
     void Update()
     {
-        if(Victims.isGameActive)
+        if (Victims.isGameActive)
         {
-            Roll();
+            Move(); // ABSTRACTION
         }
     }
 
-    public override void DealDamage()
-    {
-        Victims.health -= 50;
-    }
-
-    public void Roll()
+    public void Move() // ABSTRACTION
     {
         transform.LookAt(FindObjectOfType<Victims>().transform);
         transform.position = Vector3.MoveTowards(transform.position, FindObjectOfType<Victims>().transform.position, movementSpeed * Time.deltaTime);

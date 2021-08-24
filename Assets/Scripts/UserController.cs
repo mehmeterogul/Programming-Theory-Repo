@@ -14,12 +14,12 @@ public class UserController : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit))
             {
-                HandleDestroy(hit);
+                HandleDestroy(hit); // ABSTRACTION
             }
         }
     }
 
-    private static void HandleDestroy(RaycastHit hit)
+    private static void HandleDestroy(RaycastHit hit) // ABSTRACTION
     {
         GameObject temp = hit.collider.gameObject;
 

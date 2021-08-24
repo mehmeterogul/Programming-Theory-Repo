@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Obstacle : MonoBehaviour
+public class Obstacle : MonoBehaviour // INHERITANCE
 {
-    public virtual void DealDamage()
+    public virtual void DealDamage() // POLYMORPHISM
     {
-        Victims.health -= 100;
+        Victims.Health -= 50;
     }
 
     public void OnCollisionEnter(Collision collision)

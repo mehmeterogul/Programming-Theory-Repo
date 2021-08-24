@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 2497425625334435208}
   - component: {fileID: 2520080467568316126}
   - component: {fileID: 2520080467568316127}
-  - component: {fileID: 6637517402407295762}
+  - component: {fileID: 7114571219566987555}
   m_Layer: 0
   m_Name: Car3
   m_TagString: Obstacle
@@ -215,7 +215,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.09, y: 0.75, z: 5.4}
   m_Center: {x: 0, y: 0.53, z: 0.0022603273}
---- !u!114 &6637517402407295762
+--- !u!114 &7114571219566987555
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -224,7 +224,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2521140914939703882}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3607a82e1754ce944bdd258968517db9, type: 3}
+  m_Script: {fileID: 11500000, guid: d25fd1d96013bc642ab0a90cd4ae17bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 7.5

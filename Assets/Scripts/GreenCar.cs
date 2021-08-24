@@ -2,26 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TreeObstacle : Obstacle
+public class GreenCar : Obstacle // INHERITANCE
 {
-    public float movementSpeed = 1.5f;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public float movementSpeed = 2f;
 
     // Update is called once per frame
     void Update()
     {
-        if (Victims.isGameActive)
+        if(Victims.isGameActive)
         {
-            Roll();
+            Drive(); // ABSTRACTION
         }
     }
 
-    public void Roll()
+    public override void DealDamage() // POLYMORPHISM
+    {
+        Victims.Health -= 25;
+    }
+
+    public void Drive() // ABSTRACTION
     {
         transform.LookAt(FindObjectOfType<Victims>().transform);
         transform.position = Vector3.MoveTowards(transform.position, FindObjectOfType<Victims>().transform.position, movementSpeed * Time.deltaTime);

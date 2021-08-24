@@ -18,16 +18,16 @@ public class ObstacleSpawner : MonoBehaviour
 
     private void SpawnObstacle()
     {
-        Instantiate(GenerateObstacle(), GeneratePosition(), Quaternion.identity);
+        Instantiate(GenerateObstacle(), GeneratePosition(), Quaternion.identity); // ABSTRACTION
     }
 
-    private GameObject GenerateObstacle()
+    private GameObject GenerateObstacle() // ABSTRACTION
     {
         int index = Random.Range(0, obstacles.Count);
         return obstacles[index];
     }
 
-    private Vector3 GeneratePosition()
+    private Vector3 GeneratePosition() // ABSTRACTION
     {
         int index = Random.Range(0, positions.Count);
         return positions[index].position;
