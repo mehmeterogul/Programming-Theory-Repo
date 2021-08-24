@@ -5,11 +5,17 @@ using UnityEngine;
 public class OrangeCar : Obstacle // INHERITANCE
 {
     public float movementSpeed = 1.5f;
+    GameManager gameManager;
+
+    void Start()
+    {
+        gameManager = FindObjectOfType<GameManager>();
+    }
 
     // Update is called once per frame
     void Update()
     {
-        if (Victims.isGameActive)
+        if (gameManager.isGameActive)
         {
             Drive(); // ABSTRACTION
         }

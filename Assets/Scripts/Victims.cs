@@ -5,12 +5,10 @@ using UnityEngine.UI;
 
 public class Victims : MonoBehaviour
 {
-    public GameObject gameOverText;
+    private GameManager gameManager;
     public Text healthText;
-    public Button restartButton;
-    public static bool isGameActive = true;
-    private static int health = 100;
-    public static int Health // ENCAPSULATION
+    private int health = 100;
+    public int Health // ENCAPSULATION
     {
         get
         {
@@ -22,13 +20,18 @@ public class Victims : MonoBehaviour
         }
     }
 
+    void Start()
+    {
+        gameManager = FindObjectOfType<GameManager>();
+        healthText.text = Health.ToString();
+    }
+
     // Update is called once per frame
     void Update()
     {
-        healthText.text = health.ToString();
-
-        if (isGameActive)
+        if(gameManager.isGameActive)
         {
+            healthText.text = health.ToString();
             CheckHealthSituation(); // ABSTRACTION
         }
     }
@@ -37,11 +40,7 @@ public class Victims : MonoBehaviour
     {
         if (health <= 0)
         {
-            Debug.Log("Game Over");
-            isGameActive = false;
-            gameOverText.SetActive(true);
-            restartButton.gameObject.SetActive(true);
-            GameObject.FindGameObjectWithTag("Spawner").GetComponent<ObstacleSpawner>().CancelInvoke();
+            gameManager.GameOver();
         }
     }
 }

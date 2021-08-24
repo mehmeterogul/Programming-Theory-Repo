@@ -6,7 +6,7 @@ public class Obstacle : MonoBehaviour // INHERITANCE
 {
     public virtual void DealDamage() // POLYMORPHISM
     {
-        Victims.Health -= 50;
+        FindObjectOfType<Victims>().Health -= 25;
     }
 
     public void OnCollisionEnter(Collision collision)
